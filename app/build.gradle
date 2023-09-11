@@ -2,6 +2,9 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+
+    // Adding a SafeArgs plugin
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -9,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.cupcake"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion 34
         versionCode 1
         versionName "1.0"
@@ -28,25 +31,36 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_18
+        targetCompatibility JavaVersion.VERSION_18
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '18'
     }
+    namespace 'com.example.cupcake'
 }
 
 dependencies {
-    def nav_version = "2.3.5"
+    def nav_version = "2.7.2"
     def lifecycle_version = "2.4.0"
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.core:core-ktx:1.12.0'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation 'com.google.android.material:material:1.9.0'
+
+    // Including the JetPack Compose Navigation library
+    implementation "androidx.navigation:navigation-compose:$nav_version"
+
+    // Including Feature module support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // For testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
 }
