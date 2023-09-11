@@ -40,12 +40,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         navController = navHostFragment.navController
 
         setupActionBarWithNavController(navController)
-
     }
 
-    /**
-     * Enables back button support. Simply navigates one element up on the stack.
-     */
+    // Enables back button support. Simply navigates one element up on the stack.
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
