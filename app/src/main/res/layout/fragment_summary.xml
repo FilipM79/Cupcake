@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2020 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,9 +19,11 @@
     tools:context=".SummaryFragment">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.cupcake.model.OrderViewModel" />
+
         <variable
             name="summaryfragment"
             type="com.example.cupcake.SummaryFragment" />
@@ -132,8 +133,8 @@
                 android:id="@+id/send_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> summaryfragment.sendOrder()}"
                 android:layout_marginTop="@dimen/side_margin"
+                android:onClick="@{() -> summaryfragment.sendOrder()}"
                 android:text="@string/send" />
 
             <Button
@@ -141,8 +142,8 @@
                 style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> summaryfragment.cancelOrder()}"
                 android:layout_marginTop="@dimen/margin_between_elements"
+                android:onClick="@{() -> summaryfragment.cancelOrder()}"
                 android:text="@string/cancel" />
 
         </LinearLayout>
